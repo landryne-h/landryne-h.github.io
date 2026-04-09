@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landryne Houehou — Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal-light: #E1F5EE;
+      --teal-mid: #1D9E75;
+      --teal-dark: #0F6E56;
+      --blue-light: #E6F1FB;
+      --blue-mid: #185FA5;
+      --purple-light: #EEEDFE;
+      --purple-mid: #534AB7;
+      --amber-light: #FAEEDA;
+      --amber-mid: #854F0B;
+      --gray-bg: #F7F7F5;
+      --gray-border: rgba(0,0,0,0.1);
+      --text-primary: #1a1a18;
+      --text-secondary: #5F5E5A;
+      --text-tertiary: #888780;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #FAFAF8;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .port {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 0.5px solid var(--gray-border);
+      margin-bottom: 3rem;
+    }
+
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 56px;
+      line-height: 1.05;
+      color: var(--text-primary);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--teal-mid);
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-top: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-meta { text-align: right; }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .hero-contact {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+
+    .hero-contact a {
+      color: var(--teal-mid);
+      text-decoration: none;
+    }
+
+    /* Sections */
+    .section { margin-bottom: 3rem; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+    }
+
+    .divider {
+      height: 0.5px;
+      background: var(--gray-border);
+      margin: 2.5rem 0;
+    }
+
+    /* Profile */
+    .profile-text {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+
+    .profile-text strong {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Cards */
+    .card {
+      background: #fff;
+      border: 0.5px solid var(--gray-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .card-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .card-org {
+      font-size: 13px;
+      color: var(--teal-mid);
+      margin-bottom: 10px;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .card-body li {
+      margin-left: 16px;
+      margin-bottom: 4px;
+    }
+
+    /* Project cards */
+    .proj-card {
+      background: #fff;
+      border: 0.5px solid var(--gray-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-accent {
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--teal-mid);
+    }
+
+    .proj-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal-mid);
+      margin-bottom: 6px;
+    }
+
+    .proj-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .proj-body {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .proj-body li {
+      margin-left: 16px;
+      margin-bottom: 4px;
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 1.5rem; }
+
+    .skill-group-title {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .tag {
+      font-size: 13px;
+      padding: 5px 13px;
+      border-radius: 20px;
+      font-weight: 400;
+    }
+
+    .tag-teal { background: var(--teal-light); color: var(--teal-dark); }
+    .tag-blue { background: var(--blue-light); color: var(--blue-mid); }
+    .tag-purple { background: var(--purple-light); color: var(--purple-mid); }
+    .tag-amber { background: var(--amber-light); color: var(--amber-mid); }
+    .tag-gray { background: var(--gray-bg); color: var(--text-secondary); border: 0.5px solid var(--gray-border); }
+
+    /* Soft skills */
+    .soft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 8px;
+    }
+
+    .soft-item {
+      background: var(--gray-bg);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    /* Languages */
+    .lang-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .lang-card {
+      background: var(--gray-bg);
+      border-radius: var(--radius-md);
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    .lang-card span {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 620px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-meta { text-align: left; }
+      .hero-title { font-size: 38px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="port">
+
+    <header class="hero">
+      <div>
+        <h1 class="hero-title">Landryne<br><em>Houehou</em></h1>
+        <p class="hero-sub">Data Analyst · Pilotage Commercial</p>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-badge">Disponible en alternance</div>
+        <div class="hero-contact">
+          France entière<br>
+          +33 7 46 54 06 08<br>
+          <a href="mailto:kemilandryne.houehou@inseec-france.com">kemilandryne.houehou<br>@inseec-france.com</a><br>
+          <a href="https://landryne-h.github.io" target="_blank">landryne-h.github.io</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <p class="section-label">Profil</p>
+      <p class="profile-text">
+        Étudiante en <strong>MSc Data Analytics</strong>, je me spécialise dans le pilotage de la performance commerciale via l'analyse de données. À l'aise avec <strong>Excel avancé, Tableau et Power BI</strong>, j'ai développé des dashboards de suivi de KPI et analysé des bases de données volumineuses afin d'identifier les leviers d'optimisation. Je souhaite mettre mes compétences analytiques et ma compréhension des enjeux business au service d'une équipe orientée décision.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <p class="section-label">Expériences</p>
+      <div class="grid-2">
+        <div class="card">
+          <p class="card-date">Janv. 2025 – Août 2025</p>
+          <p class="card-title">Assistante Communication Digitale</p>
+          <p class="card-org">Moov Africa Bénin · Stage</p>
+          <ul class="card-body">
+            <li>Production de reportings hebdomadaires de performance marketing</li>
+            <li>Analyse des KPI (engagement, performance) pour identifier les écarts</li>
+            <li>Contribution à l'amélioration des offres via l'analyse des retours utilisateurs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="card-date">Août 2023 – Nov. 2023</p>
+          <p class="card-title">Assistante Marketing Communication</p>
+          <p class="card-org">ILLIMITIS Sénégal · Stage</p>
+          <ul class="card-body">
+            <li>Structuration et analyse de bases de données clients</li>
+            <li>Analyse de performance de campagnes digitales et recommandations</li>
+            <li>Amélioration des parcours clients via des tests utilisateurs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <p class="section-label">Projets</p>
+      <div class="grid-2">
+        <div class="proj-card">
+          <div class="proj-accent"></div>
+          <p class="proj-tag">Projet académique</p>
+          <p class="proj-title">Analyse de performance & rentabilité</p>
+          <ul class="proj-body">
+            <li>Analyse d'une base de données de +200 000 lignes</li>
+            <li>Construction et suivi de KPI (CA, volumes, marges)</li>
+            <li>Segmentation des ventes et analyse des tendances</li>
+            <li>Dashboard interactif Tableau pour le pilotage décisionnel</li>
+          </ul>
+        </div>
+        <div class="proj-card">
+          <div class="proj-accent"></div>
+          <p class="proj-tag">Projet personnel</p>
+          <p class="proj-title">Agent Data Analyst & workflows automatisés</p>
+          <ul class="proj-body">
+            <li>Conception d'un processus d'analyse semi-automatisé</li>
+            <li>Structuration logique des requêtes et génération de synthèses</li>
+            <li>Optimisation des flux d'information</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <p class="section-label">Compétences</p>
+      <div class="skill-group">
+        <p class="skill-group-title">Analyse & Pilotage</p>
+        <div class="tags">
+          <span class="tag tag-teal">Suivi KPI</span>
+          <span class="tag tag-teal">Analyse de performance</span>
+          <span class="tag tag-teal">Reporting décisionnel</span>
+          <span class="tag tag-teal">Analyse exploratoire</span>
+          <span class="tag tag-teal">Automatisation métier</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">Outils Data</p>
+        <div class="tags">
+          <span class="tag tag-blue">Excel avancé</span>
+          <span class="tag tag-blue">Tableau</span>
+          <span class="tag tag-blue">Power BI</span>
+          <span class="tag tag-blue">SQL</span>
+          <span class="tag tag-blue">Python (bases)</span>
+          <span class="tag tag-blue">Minitab</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">Outils métier</p>
+        <div class="tags">
+          <span class="tag tag-purple">Salesforce</span>
+          <span class="tag tag-purple">Notion</span>
+          <span class="tag tag-purple">ClickUp</span>
+          <span class="tag tag-purple">Pack Office</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <p class="section-label">Formation</p>
+      <div class="grid-2">
+        <div class="card">
+          <p class="card-date">2025 – 2027 · En cours</p>
+          <p class="card-title">MSc Data Analytics & Manager Marketing</p>
+          <p class="card-org">INSEEC MSc, Marseille</p>
+          <p class="card-body">Data Analytics, Statistiques, Programmation, Data-Driven Marketing, Management de projet</p>
+        </div>
+        <div class="card">
+          <p class="card-date">2020 – 2023 · Mention Bien</p>
+          <p class="card-title">Licence Management & Économie du Numérique</p>
+          <p class="card-org">ESMT, Dakar</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <p class="section-label">Soft skills</p>
+      <div class="soft-grid">
+        <div class="soft-item">Curieuse</div>
+        <div class="soft-item">Analytique</div>
+        <div class="soft-item">Dynamique</div>
+        <div class="soft-item">Rigoureuse</div>
+        <div class="soft-item">Apprentissage rapide</div>
+        <div class="soft-item">Travail d'équipe</div>
+        <div class="soft-item">Adaptable</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <p class="section-label">Langues</p>
+      <div class="lang-row">
+        <div class="lang-card">Français<span>Langue maternelle</span></div>
+        <div class="lang-card">Anglais<span>Niveau B2</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">Centres d'intérêt</p>
+      <div class="tags">
+        <span class="tag tag-amber">IA agentique & No-code / Low-code</span>
+        <span class="tag tag-amber">Voyages & gastronomie</span>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
