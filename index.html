@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landryne Houehou — Data Analyst Junior</title>
+  <title>Landryne Houehou — Data Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --teal-light: #E6F1FB;
-      --teal-mid: #185FA5;
-      --teal-dark: #0C447C;
       --blue-light: #E6F1FB;
       --blue-mid: #185FA5;
+      --blue-dark: #0C447C;
       --purple-light: #EEEDFE;
       --purple-mid: #534AB7;
       --amber-light: #FAEEDA;
@@ -40,7 +38,6 @@
       padding: 3rem 2rem 5rem;
     }
 
-    /* Hero */
     .hero {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -58,10 +55,7 @@
       color: var(--text-primary);
     }
 
-    .hero-title em {
-      font-style: italic;
-      color: var(--teal-mid);
-    }
+    .hero-title em { font-style: italic; color: var(--blue-mid); }
 
     .hero-sub {
       font-size: 14px;
@@ -76,8 +70,8 @@
 
     .hero-badge {
       display: inline-block;
-      background: var(--teal-light);
-      color: var(--teal-dark);
+      background: var(--blue-light);
+      color: var(--blue-dark);
       font-size: 12px;
       font-weight: 500;
       padding: 5px 14px;
@@ -91,12 +85,8 @@
       line-height: 1.9;
     }
 
-    .hero-contact a {
-      color: var(--teal-mid);
-      text-decoration: none;
-    }
+    .hero-contact a { color: var(--blue-mid); text-decoration: none; }
 
-    /* Sections */
     .section { margin-bottom: 3rem; }
 
     .section-label {
@@ -114,7 +104,6 @@
       margin: 2.5rem 0;
     }
 
-    /* Profile */
     .profile-text {
       font-size: 17px;
       font-weight: 300;
@@ -123,19 +112,10 @@
       max-width: 640px;
     }
 
-    .profile-text strong {
-      font-weight: 500;
-      color: var(--text-primary);
-    }
+    .profile-text strong { font-weight: 500; color: var(--text-primary); }
 
-    /* Grids */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-    /* Cards */
     .card {
       background: #fff;
       border: 0.5px solid var(--gray-border);
@@ -151,17 +131,8 @@
       margin-bottom: 5px;
     }
 
-    .card-title {
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .card-org {
-      font-size: 13px;
-      color: var(--teal-mid);
-      margin-bottom: 10px;
-    }
+    .card-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+    .card-org { font-size: 13px; color: var(--blue-mid); margin-bottom: 10px; }
 
     .card-body {
       font-size: 13px;
@@ -169,26 +140,32 @@
       line-height: 1.65;
     }
 
-    .card-body li {
-      margin-left: 16px;
-      margin-bottom: 4px;
-    }
+    .card-body li { margin-left: 16px; margin-bottom: 4px; }
 
-    /* Project cards */
     .proj-card {
       background: #fff;
       border: 0.5px solid var(--gray-border);
       border-radius: var(--radius-lg);
-      padding: 1.5rem 1.5rem 1.5rem 1.75rem;
-      position: relative;
       overflow: hidden;
+      margin-bottom: 16px;
     }
+
+    .proj-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-bottom: 0.5px solid var(--gray-border);
+    }
+
+    .proj-content { padding: 1.25rem 1.5rem 1.5rem; position: relative; }
 
     .proj-accent {
       position: absolute;
       top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: var(--teal-mid);
+      width: 100%; height: 3px;
+      background: var(--blue-mid);
     }
 
     .proj-tag {
@@ -196,28 +173,62 @@
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--teal-mid);
-      margin-bottom: 6px;
+      color: var(--blue-mid);
+      margin-bottom: 4px;
+      margin-top: 8px;
     }
 
     .proj-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 19px;
+      font-size: 20px;
       margin-bottom: 10px;
     }
 
     .proj-body {
       font-size: 13px;
       color: var(--text-secondary);
-      line-height: 1.65;
+      line-height: 1.7;
+      margin-bottom: 14px;
     }
 
-    .proj-body li {
-      margin-left: 16px;
-      margin-bottom: 4px;
+    .proj-body li { margin-left: 16px; margin-bottom: 5px; }
+
+    .proj-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 0.5px solid var(--gray-border);
     }
 
-    /* Skills */
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .tag { font-size: 12px; padding: 4px 10px; border-radius: 20px; font-weight: 400; }
+
+    .tag-blue { background: var(--blue-light); color: var(--blue-mid); }
+    .tag-purple { background: var(--purple-light); color: var(--purple-mid); }
+    .tag-amber { background: var(--amber-light); color: var(--amber-mid); }
+    .tag-gray { background: var(--gray-bg); color: var(--text-secondary); border: 0.5px solid var(--gray-border); }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--blue-light);
+      color: var(--blue-mid);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-link:hover { background: #d0e8f7; }
+
     .skill-group { margin-bottom: 1.5rem; }
 
     .skill-group-title {
@@ -229,22 +240,6 @@
       margin-bottom: 10px;
     }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-
-    .tag {
-      font-size: 13px;
-      padding: 5px 13px;
-      border-radius: 20px;
-      font-weight: 400;
-    }
-
-    .tag-teal { background: var(--teal-light); color: var(--teal-dark); }
-    .tag-blue { background: var(--blue-light); color: var(--blue-mid); }
-    .tag-purple { background: var(--purple-light); color: var(--purple-mid); }
-    .tag-amber { background: var(--amber-light); color: var(--amber-mid); }
-    .tag-gray { background: var(--gray-bg); color: var(--text-secondary); border: 0.5px solid var(--gray-border); }
-
-    /* Soft skills */
     .soft-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -260,7 +255,6 @@
       text-align: center;
     }
 
-    /* Languages */
     .lang-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
     .lang-card {
@@ -278,12 +272,12 @@
       margin-top: 2px;
     }
 
-    /* Responsive */
     @media (max-width: 620px) {
       .hero { grid-template-columns: 1fr; }
       .hero-meta { text-align: left; }
       .hero-title { font-size: 38px; }
       .grid-2 { grid-template-columns: 1fr; }
+      .proj-footer { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -293,23 +287,23 @@
     <header class="hero">
       <div>
         <h1 class="hero-title">Landryne<br><em>Houehou</em></h1>
-        <p class="hero-sub">Data Analyst · Analyse performance</p>
+        <p class="hero-sub">Data Analyst · Pilotage Commercial</p>
       </div>
       <div class="hero-meta">
         <div class="hero-badge">Disponible en alternance</div>
         <div class="hero-contact">
           France entière<br>
           +33 7 46 54 06 08<br>
-          <a href="mailto:kemilandryne.houehou@inseec-france.com">kemilandryne.houehou<br>@inseec-france.com</a><br>
+          <a href="mailto:kemilandryne.houehou@inseec-france.com">kemilandryne.houehou@inseec-france.com</a><br>
           <a href="https://landryne-h.github.io" target="_blank">landryne-h.github.io</a>
         </div>
       </div>
     </header>
 
     <section class="section">
-      <p class="section-label">A propos de moi</p>
+      <p class="section-label">Profil</p>
       <p class="profile-text">
-        Étudiante en <strong>MSc Data Analytics</strong>, je me spécialise dans le pilotage de la performance commerciale et marketing via l'analyse de données. À l'aise avec <strong>Excel avancé et Tableau</strong>, j'ai développé des dashboards de suivi de KPI et analysé des bases de données volumineuses afin d'identifier les leviers d'optimisation. Je souhaite mettre mes compétences analytiques et ma compréhension des enjeux business au service d'une équipe orientée décision.
+        Étudiante en <strong>MSc Data Analytics</strong>, je me spécialise dans le pilotage de la performance commerciale via l'analyse de données. À l'aise avec <strong>Excel avancé, Tableau et Power BI</strong>, j'ai développé des dashboards de suivi de KPI et analysé des bases de données volumineuses afin d'identifier les leviers d'optimisation. Je souhaite mettre mes compétences analytiques et ma compréhension des enjeux business au service d'une équipe orientée décision.
       </p>
     </section>
 
@@ -345,47 +339,81 @@
 
     <section class="section">
       <p class="section-label">Projets</p>
-      <div class="grid-2">
-        <div class="proj-card">
+
+      <div class="proj-card">
+        <img class="proj-img" src="https://public.tableau.com/static/images/An/AnalysedeperformancecommercialeSuperstoreUSA/Data-storytelling/1_rss.png" alt="Dashboard Analyse de performance commerciale Superstore USA" />
+        <div class="proj-content">
           <div class="proj-accent"></div>
-          <p class="proj-tag">Projet académique</p>
-          <p class="proj-title">Analyse de performance & rentabilité</p>
+          <p class="proj-tag">Data-Storytelling · Tableau</p>
+          <p class="proj-title">Analyse de performance commerciale — Superstore USA</p>
           <ul class="proj-body">
-            <li>Analyse d'une base de données de +200 000 lignes</li>
-            <li>Construction et suivi de KPI (CA, volumes, marges)</li>
-            <li>Segmentation des ventes et analyse des tendances</li>
-            <li>Dashboard interactif Tableau pour le pilotage décisionnel</li>
+            <li>Fouille de données sur +200 000 lignes de transactions (2019–2022)</li>
+            <li>Analyse de la rentabilité géographique par région et par état</li>
+            <li>Segmentation des sous-catégories et identification des plus rentables</li>
+            <li>Analyse churn et comportement d'achat des clients clés</li>
+            <li>Test d'hypothèses sur l'impact du discount sur la marge du produit Canon</li>
+            <li>Synthèse des insights avec recommandations business actionnables</li>
           </ul>
-        </div>
-        <div class="proj-card">
-          <div class="proj-accent"></div>
-          <p class="proj-tag">Projet personnel</p>
-          <p class="proj-title">Agent Data Analyst & workflows automatisés</p>
-          <ul class="proj-body">
-            <li>Conception d'un processus d'analyse semi-automatisé</li>
-            <li>Structuration logique des requêtes et génération de synthèses</li>
-            <li>Optimisation des flux d'information</li>
-          </ul>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag tag-blue">Tableau Public</span>
+              <span class="tag tag-blue">Data-Storytelling</span>
+              <span class="tag tag-gray">Analyse exploratoire</span>
+              <span class="tag tag-gray">KPI</span>
+            </div>
+            <a class="btn-link" href="https://public.tableau.com/views/AnalysedeperformancecommercialeSuperstoreUSA/Data-storytelling" target="_blank">
+              Voir le dashboard →
+            </a>
+          </div>
         </div>
       </div>
-      <div style="margin-top: 12px; border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(0,0,0,0.1);">
-  <div class='tableauPlaceholder' style='width:100%; height:600px;'>
-    <noscript>
-      <a href='#'>
-        <img alt='Data-storytelling' src='https://public.tableau.com/static/images/An/AnalysedeperformancecommercialeSuperstoreUSA/Data-storytelling/1_rss.png' style='border: none' />
-      </a>
-    </noscript>
-    <object class='tableauViz' style='width:100%; height:600px; display:none;'>
-      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-      <param name='embed_code_version' value='3' />
-      <param name='name' value='AnalysedeperformancecommercialeSuperstoreUSA/Data-storytelling' />
-      <param name='tabs' value='no' />
-      <param name='toolbar' value='yes' />
-      <param name='animate_transition' value='yes' />
-    </object>
-  </div>
-  <script src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
-</div>
+
+      <div class="proj-card">
+        <img class="proj-img" src="dashboard-service-client.jpg" alt="Dashboard Analyse des Flux Service Client" />
+        <div class="proj-content">
+          <div class="proj-accent"></div>
+          <p class="proj-tag">Dashboard Excel · Données simulées</p>
+          <p class="proj-title">Analyse des flux service client</p>
+          <ul class="proj-body">
+            <li>Analyse de 33 394 contacts sur 3 mois (données générées via Mockaroo)</li>
+            <li>Suivi des KPI clés : taux de résolution (79,62%), temps moyen de traitement (10 min)</li>
+            <li>Répartition des contacts par canal (Chat, Email, Téléphone) et par motif</li>
+            <li>Évolution mensuelle des volumes et analyse comparative par canal</li>
+          </ul>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag tag-blue">Excel avancé</span>
+              <span class="tag tag-blue">TCD</span>
+              <span class="tag tag-gray">KPI</span>
+              <span class="tag tag-gray">Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <img class="proj-img" src="dashboard-performance-digitale.jpg" alt="Dashboard Analyse Performance Digitale" />
+        <div class="proj-content">
+          <div class="proj-accent"></div>
+          <p class="proj-tag">Dashboard Excel · Projet académique</p>
+          <p class="proj-title">Analyse performance digitale</p>
+          <ul class="proj-body">
+            <li>Analyse de la performance digitale sur 9 mois (données fictives)</li>
+            <li>Suivi de l'évolution du trafic et du mix acquisition par levier (SEO, SEA, SMO, Newsletter, Display)</li>
+            <li>Analyse des taux de conversion par canal — SEA et SMO en tête (5% et 4,9%)</li>
+            <li>Visualisation du chiffre d'affaires par levier — le SEO génère le CA le plus élevé</li>
+          </ul>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag tag-blue">Excel avancé</span>
+              <span class="tag tag-blue">TCD</span>
+              <span class="tag tag-gray">Marketing digital</span>
+              <span class="tag tag-gray">Acquisition</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <div class="divider"></div>
@@ -395,31 +423,31 @@
       <div class="skill-group">
         <p class="skill-group-title">Analyse & Pilotage</p>
         <div class="tags">
-          <span class="tag tag-teal">Suivi KPI</span>
-          <span class="tag tag-teal">Analyse de performance</span>
-          <span class="tag tag-teal">Reporting décisionnel</span>
-          <span class="tag tag-teal">Analyse exploratoire</span>
-          <span class="tag tag-teal">Automatisation métier</span>
+          <span class="tag tag-blue">Suivi KPI</span>
+          <span class="tag tag-blue">Analyse de performance</span>
+          <span class="tag tag-blue">Reporting décisionnel</span>
+          <span class="tag tag-blue">Analyse exploratoire</span>
+          <span class="tag tag-blue">Automatisation métier</span>
         </div>
       </div>
       <div class="skill-group">
         <p class="skill-group-title">Outils Data</p>
         <div class="tags">
-          <span class="tag tag-blue">Excel avancé</span>
-          <span class="tag tag-blue">Tableau</span>
-          <span class="tag tag-blue">Power BI</span>
-          <span class="tag tag-blue">SQL</span>
-          <span class="tag tag-blue">Python (bases)</span>
-          <span class="tag tag-blue">Minitab</span>
+          <span class="tag tag-purple">Excel avancé</span>
+          <span class="tag tag-purple">Tableau</span>
+          <span class="tag tag-purple">Power BI</span>
+          <span class="tag tag-purple">SQL</span>
+          <span class="tag tag-purple">Python (bases)</span>
+          <span class="tag tag-purple">Minitab</span>
         </div>
       </div>
       <div class="skill-group">
         <p class="skill-group-title">Outils métier</p>
         <div class="tags">
-          <span class="tag tag-purple">Salesforce</span>
-          <span class="tag tag-purple">Notion</span>
-          <span class="tag tag-purple">ClickUp</span>
-          <span class="tag tag-purple">Pack Office</span>
+          <span class="tag tag-amber">Salesforce</span>
+          <span class="tag tag-amber">Notion</span>
+          <span class="tag tag-amber">ClickUp</span>
+          <span class="tag tag-amber">Pack Office</span>
         </div>
       </div>
     </section>
